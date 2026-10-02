@@ -13,32 +13,38 @@ const links = [
   { label: 'Tentang Kami', to: '/about' },
   { label: 'FAQ', to: '/faq' },
 ]
+
+function isActive(to: string) {
+  return route.path === to || route.path.startsWith(`${to}/`)
+}
 </script>
 
 <template>
-  <header class="sticky top-0 z-40 border-b border-line/80 bg-white/95 backdrop-blur">
+  <header class="sticky top-0 z-40 border-b border-white/10 bg-ink/95 shadow-[0_8px_30px_-24px_rgba(2,142,246,0.7)] backdrop-blur-xl">
     <UiContainer>
-      <nav class="flex h-18 items-center justify-between" aria-label="Navigasi utama">
-        <NuxtLink to="/" class="flex items-center gap-3 rounded-md" aria-label="FIXIT — Beranda">
-          <img src="/logo.svg" width="44" height="44" alt="" class="h-11 w-11 rounded-md object-cover" />
+      <nav class="flex h-[72px] items-center justify-between" aria-label="Navigasi utama">
+        <NuxtLink to="/" class="group flex items-center gap-3 rounded-lg" aria-label="FIXIT — Beranda">
+          <span class="relative h-11 w-11 shrink-0 overflow-hidden rounded-xl border border-white/15 bg-white shadow-[0_8px_24px_-12px_rgba(4,169,249,0.8)]">
+            <img src="/logo.svg" width="68" height="68" alt="" class="absolute left-1/2 top-0 h-[68px] w-[68px] max-w-none -translate-x-1/2" />
+          </span>
           <span class="leading-none">
-            <span class="block text-lg font-extrabold tracking-[-0.03em] text-navy">FIXIT</span>
-            <span class="mt-1 block text-[9px] font-bold uppercase tracking-[0.16em] text-slate-500">Solution Technology</span>
+            <span class="block text-[22px] font-extrabold tracking-[-0.04em] text-white transition-colors group-hover:text-cyan">FIXIT</span>
+            <span class="mt-1.5 block text-[9px] font-bold uppercase tracking-[0.18em] text-blue-200">Solution Technology</span>
           </span>
         </NuxtLink>
 
-        <div class="hidden items-center gap-8 lg:flex">
+        <div class="hidden items-center gap-1 lg:flex">
           <NuxtLink
             v-for="link in links" :key="link.to" :to="link.to"
-            class="text-sm font-semibold text-slate-600 transition-colors hover:text-brand"
-            active-class="text-brand"
+            class="relative flex h-[72px] items-center px-4 text-sm font-semibold transition-colors after:absolute after:inset-x-4 after:bottom-0 after:h-0.5 after:origin-center after:bg-cyan after:transition-transform"
+            :class="isActive(link.to) ? 'text-white after:scale-x-100' : 'text-slate-300 after:scale-x-0 hover:text-white hover:after:scale-x-100'"
           >{{ link.label }}</NuxtLink>
-          <UiButton @click="openConsultation()"><MessageCircle class="h-4 w-4" aria-hidden="true" /> Konsultasi Sekarang</UiButton>
+          <UiButton class="ml-3 !min-h-11 !rounded-[10px] !px-[18px] !py-2.5 !shadow-none ring-1 ring-white/10" @click="openConsultation()"><MessageCircle class="h-4 w-4" aria-hidden="true" /> Konsultasi Sekarang</UiButton>
         </div>
 
         <button
-          class="inline-flex h-11 w-11 items-center justify-center rounded-lg border border-line text-ink lg:hidden"
-          :aria-expanded="isOpen" aria-controls="mobile-menu" aria-label="Buka menu"
+          class="inline-flex h-11 w-11 items-center justify-center rounded-[10px] border border-white/15 bg-white/5 text-white transition-colors hover:bg-white/10 lg:hidden"
+          :aria-expanded="isOpen" aria-controls="mobile-menu" :aria-label="isOpen ? 'Tutup menu' : 'Buka menu'"
           @click="isOpen = !isOpen"
         >
           <X v-if="isOpen" class="h-5 w-5" aria-hidden="true" />
@@ -46,11 +52,11 @@ const links = [
         </button>
       </nav>
 
-      <div v-if="isOpen" id="mobile-menu" class="border-t border-line py-5 lg:hidden">
+      <div v-if="isOpen" id="mobile-menu" class="border-t border-white/10 py-4 lg:hidden">
         <div class="grid gap-1">
-          <NuxtLink v-for="link in links" :key="link.to" :to="link.to" class="rounded-lg px-3 py-3 text-sm font-semibold text-slate-700 hover:bg-mist hover:text-brand">{{ link.label }}</NuxtLink>
-          <NuxtLink to="/contact" class="rounded-lg px-3 py-3 text-sm font-semibold text-slate-700 hover:bg-mist hover:text-brand">Kontak</NuxtLink>
-          <UiButton class="mt-3 w-full" @click="openConsultation(); isOpen = false"><MessageCircle class="h-4 w-4" /> Konsultasi Sekarang</UiButton>
+          <NuxtLink v-for="link in links" :key="link.to" :to="link.to" class="rounded-lg border border-transparent px-3 py-3 text-sm font-semibold transition-colors" :class="isActive(link.to) ? 'border-white/10 bg-white/10 text-cyan' : 'text-slate-200 hover:bg-white/5 hover:text-white'">{{ link.label }}</NuxtLink>
+          <NuxtLink to="/contact" class="rounded-lg border border-transparent px-3 py-3 text-sm font-semibold text-slate-200 transition-colors hover:bg-white/5 hover:text-white">Kontak</NuxtLink>
+          <UiButton class="mt-3 w-full !min-h-11 !py-2.5 !shadow-none" @click="openConsultation(); isOpen = false"><MessageCircle class="h-4 w-4" aria-hidden="true" /> Konsultasi Sekarang</UiButton>
         </div>
       </div>
     </UiContainer>
