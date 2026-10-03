@@ -31,6 +31,15 @@ const process = [
   ['04', 'Pengerjaan', 'Tim melakukan instalasi atau pengembangan.'],
   ['05', 'Testing & Serah Terima', 'Solusi diuji sebelum diserahkan kepada pelanggan.'],
 ]
+
+const serviceMapContent: Record<string, { title: string; description: string }> = {
+  cctv: { title: 'CCTV & Security', description: 'CCTV, DVR/NVR & Monitoring' },
+  starlink: { title: 'Starlink & Internet', description: 'Instalasi & konfigurasi' },
+  network: { title: 'Network & Wi-Fi', description: 'LAN, Wi-Fi & Router' },
+  website: { title: 'Web Development', description: 'Website & Digital Platform' },
+  application: { title: 'Application', description: 'Custom Application' },
+  'it-support': { title: 'IT Support', description: 'Maintenance & Troubleshooting' },
+}
 </script>
 
 <template>
@@ -53,18 +62,22 @@ const process = [
             </div>
           </div>
 
-          <div class="relative mx-auto w-full max-w-lg lg:ml-auto">
+          <div class="relative mx-auto w-full max-w-xl lg:ml-auto">
             <div class="absolute -left-5 top-16 h-24 w-1 bg-cyan" />
-            <div class="rounded-2xl border border-white/15 bg-white/[0.06] p-5 shadow-2xl backdrop-blur-sm sm:p-7">
+            <div class="rounded-2xl border border-white/15 bg-white/[0.06] p-4 shadow-2xl backdrop-blur-sm sm:p-6">
               <div class="flex items-center justify-between border-b border-white/10 pb-5">
                 <div><p class="text-xs font-bold uppercase tracking-[.18em] text-cyan">WHAT WE SOLVE</p><p class="mt-2 text-sm text-slate-300">Technology challenges, solved.</p></div>
                 <CircleDot class="h-6 w-6 text-cyan" />
               </div>
-              <div class="grid grid-cols-2 gap-px overflow-hidden rounded-xl bg-white/10 sm:grid-cols-3">
-                <NuxtLink v-for="service in services" :key="service.slug" :to="`/services/${service.slug}`" class="group flex min-h-32 flex-col justify-between bg-[#0c2042] p-4 transition-colors hover:bg-navy">
-                  <component :is="service.icon" class="h-6 w-6 text-cyan" :stroke-width="1.6" aria-hidden="true" />
-                  <span class="text-sm font-semibold text-white">{{ service.navTitle }}</span>
-                </NuxtLink>
+              <div class="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-3">
+                <ServicesServiceMapCard
+                  v-for="(service, index) in services"
+                  :key="service.slug"
+                  :service="service"
+                  :index="index"
+                  :title="serviceMapContent[service.slug]?.title ?? service.navTitle"
+                  :description="serviceMapContent[service.slug]?.description ?? service.shortDescription"
+                />
               </div>
               <div class="mt-5 flex items-center justify-between text-xs text-slate-400"><span>Your Technology, Our Solution</span><span class="font-mono text-cyan">FIXIT / 01</span></div>
             </div>
