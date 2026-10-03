@@ -34,25 +34,25 @@ const accent = computed(() => [
 <template>
   <NuxtLink
     :to="`/services/${service.slug}`"
-    class="group relative flex min-h-44 flex-col overflow-hidden rounded-xl border bg-[#0c2042] p-4 transition duration-300 hover:-translate-y-0.5 hover:bg-navy focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan focus-visible:ring-offset-2 focus-visible:ring-offset-ink sm:min-h-48"
+    class="group relative flex min-h-40 flex-col overflow-hidden rounded-xl border bg-[#0c2042] p-4 transition duration-300 hover:-translate-y-0.5 hover:bg-navy focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan focus-visible:ring-offset-2 focus-visible:ring-offset-ink sm:min-h-44"
     :class="[accent.border, accent.glow]"
     :aria-label="`Lihat layanan ${title}`"
   >
-    <span class="absolute right-4 top-3 font-mono text-sm text-slate-400">{{ String(index + 1).padStart(2, '0') }}</span>
+    <span class="absolute right-4 top-3 font-mono text-xs text-slate-400">{{ String(index + 1).padStart(2, '0') }}</span>
 
-    <component :is="service.icon" class="h-9 w-9" :class="accent.icon" :stroke-width="1.7" aria-hidden="true" />
+    <component :is="service.icon" class="h-8 w-8" :class="accent.icon" :stroke-width="1.7" aria-hidden="true" />
 
-    <div class="mt-auto pr-10">
-      <h3 class="text-sm font-bold leading-5 text-white sm:text-base">{{ title }}</h3>
-      <p class="mt-1.5 text-xs leading-5 text-slate-300 sm:text-sm">{{ description }}</p>
+    <div class="mt-auto">
+      <h3 class="text-sm font-bold leading-5 text-white">{{ title }}</h3>
+      <p class="mt-1.5 pr-9 text-xs leading-[1.45] text-slate-300">{{ description }}</p>
     </div>
 
     <span
-      class="absolute bottom-4 right-4 flex h-8 w-8 items-center justify-center rounded-full border transition-colors"
+      class="absolute bottom-3.5 right-3.5 flex h-7 w-7 items-center justify-center rounded-full border transition-colors"
       :class="accent.action"
       aria-hidden="true"
     >
-      <ArrowRight class="h-4 w-4" />
+      <ArrowRight class="h-3.5 w-3.5" />
     </span>
   </NuxtLink>
 </template>
