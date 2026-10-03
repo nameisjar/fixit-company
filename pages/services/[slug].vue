@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ArrowRight, Check, MessageCircle } from 'lucide-vue-next'
+import { ArrowRight, Check } from 'lucide-vue-next'
 import { getService, services } from '~/data/services'
 import { portfolioItems } from '~/data/portfolio'
 import { siteConfig } from '~/config/site'
@@ -46,7 +46,7 @@ useHead(() => ({
             <div class="mt-8 flex flex-wrap gap-2">
               <span v-for="audience in current.audiences" :key="audience" class="rounded-full border border-line bg-mist px-3 py-2 text-xs font-semibold text-slate-700">{{ audience }}</span>
             </div>
-            <UiButton class="mt-8" @click="openConsultation(current.navTitle)"><MessageCircle class="h-4 w-4" /> {{ current.ctaText }}</UiButton>
+            <UiButton class="mt-8" @click="openConsultation(current.navTitle)"><UiWhatsAppIcon class="h-4 w-4" /> {{ current.ctaText }}</UiButton>
           </div>
         </div>
       </UiContainer>

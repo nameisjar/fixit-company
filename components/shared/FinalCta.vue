@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ArrowRight, MessageCircle } from 'lucide-vue-next'
+import { ArrowRight } from 'lucide-vue-next'
 const { openConsultation } = useConsultation()
 </script>
 
@@ -13,7 +13,7 @@ const { openConsultation } = useConsultation()
           <p class="mt-4 max-w-xl leading-7 text-blue-50">Ceritakan kebutuhan Anda. Tim FIXIT akan membantu mencari solusi yang sesuai.</p>
         </div>
         <div class="flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
-          <UiButton variant="light" @click="openConsultation()"><MessageCircle class="h-4 w-4" /> Konsultasi via WhatsApp</UiButton>
+          <UiButton variant="light" @click="openConsultation()"><UiWhatsAppIcon class="h-4 w-4" /> Konsultasi via WhatsApp</UiButton>
           <UiButton to="/contact" variant="ghost">Hubungi Kami <ArrowRight class="h-4 w-4" /></UiButton>
         </div>
       </div>

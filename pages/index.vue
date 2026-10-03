@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ArrowDown, ArrowRight, Check, CircleDot, MapPin, MessageCircle, Network, ShieldCheck, SlidersHorizontal, Wrench } from 'lucide-vue-next'
+import { ArrowDown, ArrowRight, Check, CircleDot, MapPin, Network, ShieldCheck, SlidersHorizontal, Wrench } from 'lucide-vue-next'
 import { services } from '~/data/services'
 import { portfolioItems } from '~/data/portfolio'
 import { faqs } from '~/data/faq'
@@ -41,14 +41,14 @@ const process = [
         <div class="relative grid min-h-[calc(100vh-4.5rem)] items-center gap-12 py-16 lg:grid-cols-[1.1fr_.9fr] lg:py-20">
           <div>
             <div class="mb-7 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-2 text-xs font-semibold text-blue-100">
-              <MapPin class="h-4 w-4 text-cyan" aria-hidden="true" /> Melayani Merauke & Papua Selatan
+              <MapPin class="h-4 w-4 text-cyan" aria-hidden="true" /> Berbasis di Merauke, Melayani Seluruh Indonesia
             </div>
             <h1 class="max-w-4xl text-4xl font-extrabold leading-[1.05] tracking-[-0.05em] sm:text-6xl lg:text-7xl">
               Solusi Teknologi untuk <span class="text-cyan">Rumah, Bisnis,</span> dan Organisasi.
             </h1>
-            <p class="mt-7 max-w-2xl text-base leading-8 text-slate-300 sm:text-lg">Dari CCTV, Starlink, jaringan hingga website dan aplikasi. FIXIT membantu menghadirkan solusi teknologi yang sesuai dengan kebutuhan Anda.</p>
+            <p class="mt-7 max-w-2xl text-base leading-8 text-slate-300 sm:text-lg">Menghadirkan solusi teknologi terintegrasi untuk mendukung kebutuhan rumah, bisnis, dan organisasi—mulai dari infrastruktur IT hingga sistem digital.</p>
             <div class="mt-9 flex flex-col gap-3 sm:flex-row">
-              <UiButton @click="openConsultation()"><MessageCircle class="h-4 w-4" /> Konsultasi Sekarang</UiButton>
+              <UiButton @click="openConsultation()"><UiWhatsAppIcon class="h-4 w-4" /> Konsultasi via WhatsApp</UiButton>
               <UiButton to="#layanan" variant="ghost">Lihat Layanan <ArrowDown class="h-4 w-4" /></UiButton>
             </div>
           </div>
@@ -57,7 +57,7 @@ const process = [
             <div class="absolute -left-5 top-16 h-24 w-1 bg-cyan" />
             <div class="rounded-2xl border border-white/15 bg-white/[0.06] p-5 shadow-2xl backdrop-blur-sm sm:p-7">
               <div class="flex items-center justify-between border-b border-white/10 pb-5">
-                <div><p class="text-xs font-bold uppercase tracking-[.18em] text-cyan">FIXIT Service Map</p><p class="mt-2 text-sm text-slate-300">Satu pintu untuk kebutuhan teknologi</p></div>
+                <div><p class="text-xs font-bold uppercase tracking-[.18em] text-cyan">WHAT WE SOLVE</p><p class="mt-2 text-sm text-slate-300">Technology challenges, solved.</p></div>
                 <CircleDot class="h-6 w-6 text-cyan" />
               </div>
               <div class="grid grid-cols-2 gap-px overflow-hidden rounded-xl bg-white/10 sm:grid-cols-3">
@@ -66,7 +66,7 @@ const process = [
                   <span class="text-sm font-semibold text-white">{{ service.navTitle }}</span>
                 </NuxtLink>
               </div>
-              <div class="mt-5 flex items-center justify-between text-xs text-slate-400"><span>Practical technology solutions</span><span class="font-mono text-cyan">FIXIT / 01</span></div>
+              <div class="mt-5 flex items-center justify-between text-xs text-slate-400"><span>Your Technology, Our Solution</span><span class="font-mono text-cyan">FIXIT / 01</span></div>
             </div>
           </div>
         </div>
@@ -149,7 +149,7 @@ const process = [
             <p class="eyebrow">Area layanan</p>
             <h2 class="display-title">Berbasis di Merauke, hadir untuk Papua Selatan.</h2>
             <p class="body-copy mt-5">Ceritakan lokasi dan kebutuhan Anda agar ruang lingkup layanan dapat dikonfirmasi lebih awal.</p>
-            <UiButton class="mt-7" @click="openConsultation()">Konsultasikan Lokasi <ArrowRight class="h-4 w-4" /></UiButton>
+            <UiButton class="mt-7" @click="openConsultation()"><UiWhatsAppIcon class="h-4 w-4" /> Konsultasikan Lokasi</UiButton>
           </div>
           <div class="grid-paper relative min-h-80 overflow-hidden rounded-2xl bg-navy p-8 text-white sm:p-12">
             <div class="absolute right-10 top-10 h-40 w-40 rounded-full border border-cyan/30" />

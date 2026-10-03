@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { MessageCircle } from 'lucide-vue-next'
 import { faqs } from '~/data/faq'
 
 const { openConsultation } = useConsultation()
@@ -19,7 +18,7 @@ useHead({
           <UiAccordion :items="faqs" />
           <div class="mt-12 rounded-xl border border-line bg-mist p-7 sm:flex sm:items-center sm:justify-between sm:gap-8">
             <div><h2 class="text-xl font-bold text-ink">Masih punya pertanyaan?</h2><p class="mt-2 text-sm leading-6 text-slate-600">Ceritakan kebutuhan Anda agar kami dapat membantu mengarahkannya.</p></div>
-            <UiButton class="mt-5 shrink-0 sm:mt-0" @click="openConsultation()"><MessageCircle class="h-4 w-4" /> Mulai Konsultasi</UiButton>
+            <UiButton class="mt-5 shrink-0 sm:mt-0" @click="openConsultation()"><UiWhatsAppIcon class="h-4 w-4" /> Mulai Konsultasi via WhatsApp</UiButton>
           </div>
         </div>
       </UiContainer>

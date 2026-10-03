@@ -25,7 +25,7 @@ const details = [
             <p class="eyebrow">Informasi kontak</p>
             <h2 class="display-title">Mulai dengan konteks yang jelas.</h2>
             <p class="body-copy mt-5">Informasi kontak yang belum tersedia tidak ditampilkan sebagai data palsu. Formulir konsultasi dapat langsung menyiapkan pesan Anda.</p>
-            <UiButton class="mt-8" @click="openConsultation()"><MessageCircle class="h-4 w-4" /> Buka Formulir Konsultasi</UiButton>
+            <UiButton class="mt-8" @click="openConsultation()"><UiWhatsAppIcon class="h-4 w-4" /> Buka Konsultasi WhatsApp</UiButton>
           </div>
           <dl class="grid gap-px overflow-hidden rounded-xl border border-line bg-line sm:grid-cols-2">
             <div v-for="item in details" :key="item.label" class="bg-white p-6">

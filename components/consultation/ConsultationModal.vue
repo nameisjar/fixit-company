@@ -67,7 +67,7 @@ function onKeydown(event: KeyboardEvent) {
           </label>
           <p v-if="error" role="alert" class="text-sm font-semibold text-red-700 sm:col-span-2">{{ error }}</p>
           <div class="sm:col-span-2">
-            <UiButton type="submit" class="w-full sm:w-auto">Lanjutkan ke WhatsApp</UiButton>
+            <UiButton type="submit" class="w-full sm:w-auto"><UiWhatsAppIcon class="h-4 w-4" /> Lanjutkan ke WhatsApp</UiButton>
             <p class="mt-3 text-xs leading-5 text-slate-500">Data tidak disimpan di website. Pesan akan disiapkan untuk dikirim melalui WhatsApp.</p>
           </div>
         </form>

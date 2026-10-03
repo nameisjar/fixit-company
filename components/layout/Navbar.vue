@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Menu, MessageCircle, X } from 'lucide-vue-next'
+import { Menu, X } from 'lucide-vue-next'
 
 const isOpen = ref(false)
 const route = useRoute()
@@ -39,7 +39,7 @@ function isActive(to: string) {
             class="relative flex h-[72px] items-center px-4 text-sm font-semibold transition-colors after:absolute after:inset-x-4 after:bottom-0 after:h-0.5 after:origin-center after:bg-cyan after:transition-transform"
             :class="isActive(link.to) ? 'text-white after:scale-x-100' : 'text-slate-300 after:scale-x-0 hover:text-white hover:after:scale-x-100'"
           >{{ link.label }}</NuxtLink>
-          <UiButton class="ml-3 !min-h-11 !rounded-[10px] !px-[18px] !py-2.5 !shadow-none ring-1 ring-white/10" @click="openConsultation()"><MessageCircle class="h-4 w-4" aria-hidden="true" /> Konsultasi Sekarang</UiButton>
+          <UiButton class="ml-3 !min-h-11 !rounded-[10px] !px-[18px] !py-2.5 !shadow-none ring-1 ring-white/10" @click="openConsultation()"><UiWhatsAppIcon class="h-4 w-4" /> Konsultasi via WhatsApp</UiButton>
         </div>
 
         <button
@@ -56,7 +56,7 @@ function isActive(to: string) {
         <div class="grid gap-1">
           <NuxtLink v-for="link in links" :key="link.to" :to="link.to" class="rounded-lg border border-transparent px-3 py-3 text-sm font-semibold transition-colors" :class="isActive(link.to) ? 'border-white/10 bg-white/10 text-cyan' : 'text-slate-200 hover:bg-white/5 hover:text-white'">{{ link.label }}</NuxtLink>
           <NuxtLink to="/contact" class="rounded-lg border border-transparent px-3 py-3 text-sm font-semibold text-slate-200 transition-colors hover:bg-white/5 hover:text-white">Kontak</NuxtLink>
-          <UiButton class="mt-3 w-full !min-h-11 !py-2.5 !shadow-none" @click="openConsultation(); isOpen = false"><MessageCircle class="h-4 w-4" aria-hidden="true" /> Konsultasi Sekarang</UiButton>
+          <UiButton class="mt-3 w-full !min-h-11 !py-2.5 !shadow-none" @click="openConsultation(); isOpen = false"><UiWhatsAppIcon class="h-4 w-4" /> Konsultasi via WhatsApp</UiButton>
         </div>
       </div>
     </UiContainer>
