@@ -3,7 +3,7 @@ import { Clock, Instagram, Mail, MapPin, MessageCircle } from 'lucide-vue-next'
 import { siteConfig } from '~/config/site'
 
 const { openConsultation } = useConsultation()
-useSeoMeta({ title: 'Kontak FIXIT | Merauke', description: 'Hubungi FIXIT untuk konsultasi kebutuhan CCTV, Starlink, jaringan, website, aplikasi, dan IT support.' })
+useSeoMeta({ title: 'Kontak FIXIT', description: 'Hubungi FIXIT untuk konsultasi kebutuhan CCTV, Starlink, jaringan, website, aplikasi, IT support, repair, dan maintenance.' })
 useHead({ link: [{ rel: 'canonical', href: '/contact' }] })
 
 const details = [
@@ -39,7 +39,7 @@ const details = [
     </section>
     <section class="bg-mist py-12">
       <UiContainer>
-        <div class="flex items-center gap-4"><MapPin class="h-8 w-8 shrink-0 text-brand" /><div><p class="text-xs font-bold uppercase tracking-[.16em] text-brand">Cakupan awal</p><p class="mt-1 text-xl font-bold text-ink">Merauke dan Papua Selatan</p></div></div>
+        <div class="flex items-center gap-4"><MapPin class="h-8 w-8 shrink-0 text-brand" /><div><p class="text-xs font-bold uppercase tracking-[.16em] text-brand">Basis & cakupan layanan</p><p class="mt-1 text-xl font-bold text-ink">{{ siteConfig.serviceArea }}</p></div></div>
       </UiContainer>
     </section>
     <SharedFinalCta />

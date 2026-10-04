@@ -22,6 +22,13 @@ export interface PortfolioItem {
   category: string
   location: string
   description: string
-  status: 'placeholder'
+  status: 'placeholder' | 'published'
   services: string[]
+  period?: string
+  scale?: string
+  problem?: string
+  solution?: string
+  implementation?: string[]
+  result?: string
+  images?: string[]
 }

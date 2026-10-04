@@ -4,7 +4,7 @@ import { services } from '~/data/services'
 
 useSeoMeta({
   title: 'Layanan Teknologi | FIXIT',
-  description: 'Jelajahi layanan CCTV, Starlink, jaringan, website, aplikasi, dan IT support dari FIXIT.',
+  description: 'Jelajahi layanan CCTV, Starlink, jaringan, website, aplikasi, IT support dan repair, serta IT maintenance dari FIXIT.',
 })
 useHead({ link: [{ rel: 'canonical', href: '/services' }] })
 </script>
@@ -19,6 +19,7 @@ useHead({ link: [{ rel: 'canonical', href: '/services' }] })
         </div>
       </UiContainer>
     </section>
+    <SharedServiceAssurance />
     <section class="bg-mist py-14">
       <UiContainer>
         <div class="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-center">

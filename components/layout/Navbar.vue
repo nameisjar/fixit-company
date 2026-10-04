@@ -24,9 +24,7 @@ function isActive(to: string) {
     <UiContainer>
       <nav class="flex h-[72px] items-center justify-between" aria-label="Navigasi utama">
         <NuxtLink to="/" class="group flex items-center gap-3 rounded-lg" aria-label="FIXIT — Beranda">
-          <span class="relative h-11 w-11 shrink-0 overflow-hidden rounded-xl border border-white/15 bg-white shadow-[0_8px_24px_-12px_rgba(4,169,249,0.8)]">
-            <img src="/logo.svg" width="68" height="68" alt="" class="absolute left-1/2 top-0 h-[68px] w-[68px] max-w-none -translate-x-1/2" />
-          </span>
+          <UiLogoMark class="h-11 w-12 shrink-0 rounded-xl border border-white/15 shadow-[0_8px_24px_-12px_rgba(4,169,249,0.8)]" />
           <span class="leading-none">
             <span class="block text-[22px] font-extrabold tracking-[-0.04em] text-white transition-colors group-hover:text-cyan">FIXIT</span>
             <span class="mt-1.5 block text-[9px] font-bold uppercase tracking-[0.18em] text-blue-200">Solution Technology</span>

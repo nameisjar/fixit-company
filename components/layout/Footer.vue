@@ -10,7 +10,7 @@ import { siteConfig } from '~/config/site'
       <div class="grid gap-12 py-14 sm:grid-cols-2 lg:grid-cols-4 lg:py-16">
         <div class="sm:col-span-2">
           <div class="mb-5 flex items-center gap-3">
-            <img src="/logo.svg" width="54" height="54" alt="" class="h-14 w-14 rounded-lg object-cover" loading="lazy" />
+            <UiLogoMark class="h-14 w-16 shrink-0 rounded-xl border border-white/10" />
             <div><p class="text-xl font-extrabold">FIXIT</p><p class="text-xs tracking-wider text-blue-200">SOLUTION TECHNOLOGY</p></div>
           </div>
           <p class="max-w-md text-sm leading-7 text-slate-300">Solusi teknologi untuk rumah, bisnis, organisasi, dan instansi.</p>
@@ -33,7 +33,7 @@ import { siteConfig } from '~/config/site'
         </div>
       </div>
       <div class="flex flex-col gap-3 border-t border-white/10 py-6 text-xs text-slate-400 sm:flex-row sm:items-center sm:justify-between">
-        <p>© {{ new Date().getFullYear() }} {{ siteConfig.legalName }}.</p>
+        <p>© {{ new Date().getFullYear() }} {{ siteConfig.name }}.</p>
         <p>{{ siteConfig.tagline }}</p>
       </div>
     </UiContainer>

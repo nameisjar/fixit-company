@@ -1,5 +1,5 @@
 import {
-  AppWindow, Camera, Code2, Headphones, Router, Satellite,
+  AppWindow, Camera, Code2, Headphones, Router, Satellite, Wrench,
 } from 'lucide-vue-next'
 import type { Service } from '~/types'
 
@@ -57,14 +57,24 @@ export const services: Service[] = [
     ctaText: 'Konsultasikan Ide Aplikasi Anda',
   },
   {
-    slug: 'it-support', title: 'IT Support', navTitle: 'IT Support', icon: Headphones,
-    shortDescription: 'Bantuan teknis untuk perangkat, software, jaringan, dan kebutuhan IT lainnya.',
-    description: 'Dukungan teknis praktis untuk membantu menangani kendala perangkat, software, dan jaringan.',
-    features: ['Troubleshooting komputer', 'Instalasi software', 'Troubleshooting jaringan', 'Konfigurasi perangkat', 'Pemeliharaan sistem', 'Konsultasi IT dasar'],
+    slug: 'it-support', title: 'IT Support & Repair', navTitle: 'IT Support & Repair', icon: Headphones,
+    shortDescription: 'Dukungan teknis, diagnosis, dan perbaikan perangkat untuk kebutuhan personal maupun operasional.',
+    description: 'Dukungan teknis praktis untuk membantu menangani kendala perangkat, software, printer, dan jaringan berdasarkan hasil diagnosis.',
+    features: ['Troubleshooting komputer', 'Service laptop/PC', 'Service smartphone', 'Dukungan printer', 'Instalasi OS dan software', 'Upgrade perangkat', 'Konfigurasi perangkat'],
     benefits: ['Kendala ditangani berdasarkan diagnosis', 'Solusi dijelaskan dengan bahasa yang mudah dipahami', 'Dukungan disesuaikan dengan kebutuhan'],
     process: standardProcess,
     audiences: ['Rumah', 'Toko', 'Kantor', 'Sekolah', 'UMKM', 'Organisasi'],
     ctaText: 'Konsultasikan Kendala IT Anda',
+  },
+  {
+    slug: 'it-maintenance', title: 'IT Maintenance & Consulting', navTitle: 'IT Maintenance', icon: Wrench,
+    shortDescription: 'Pemeliharaan preventif, audit perangkat, inventaris, dan konsultasi kebutuhan teknologi.',
+    description: 'Pendampingan untuk membantu menjaga perangkat dan sistem tetap terpantau serta merencanakan kebutuhan teknologi secara lebih terarah.',
+    features: ['Preventive maintenance', 'Audit perangkat', 'Inventaris perangkat', 'Pemeriksaan kondisi sistem', 'Rekomendasi perbaikan', 'Konsultasi kebutuhan teknologi'],
+    benefits: ['Kondisi perangkat lebih mudah dipantau', 'Kebutuhan perawatan dapat direncanakan', 'Keputusan teknologi didukung catatan yang lebih jelas'],
+    process: ['Konsultasi', 'Inventaris & pemeriksaan', 'Analisis kondisi', 'Rekomendasi', 'Pelaksanaan sesuai kesepakatan', 'Laporan & tindak lanjut'],
+    audiences: ['Kantor', 'Sekolah', 'Toko', 'UMKM', 'Organisasi', 'Instansi'],
+    ctaText: 'Diskusikan Kebutuhan Maintenance Anda',
   },
 ]
 

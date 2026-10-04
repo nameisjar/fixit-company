@@ -19,7 +19,7 @@ export default defineNuxtConfig({
     prerender: {
       routes: [
         '/', '/services', '/services/cctv', '/services/starlink', '/services/network',
-        '/services/website', '/services/application', '/services/it-support',
+        '/services/website', '/services/application', '/services/it-support', '/services/it-maintenance',
         '/portfolio', '/about', '/faq', '/contact', '/sitemap.xml', '/robots.txt',
       ],
       crawlLinks: true,

@@ -19,7 +19,7 @@ const serviceFaqs = computed<FaqItem[]>(() => [
 ])
 
 useSeoMeta({
-  title: () => `${current.value.title} Merauke | FIXIT`,
+  title: () => `${current.value.title} | FIXIT`,
   description: () => current.value.description,
   ogTitle: () => `${current.value.title} | FIXIT`,
   ogDescription: () => current.value.description,
@@ -81,6 +81,8 @@ useHead(() => ({
         </ol>
       </UiContainer>
     </section>
+
+    <SharedServiceAssurance />
 
     <section v-if="related.length" class="section-pad bg-ink text-white">
       <UiContainer>

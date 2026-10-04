@@ -24,13 +24,7 @@ const principles = [
   { icon: ShieldCheck, title: 'Clear Process', text: 'Proses pekerjaan dijelaskan sejak konsultasi hingga penyelesaian.' },
 ]
 
-const process = [
-  ['01', 'Konsultasi', 'Ceritakan kebutuhan teknologi Anda.'],
-  ['02', 'Analisis', 'FIXIT memahami kebutuhan dan kondisi di lapangan.'],
-  ['03', 'Penawaran', 'Anda menerima solusi dan estimasi pekerjaan.'],
-  ['04', 'Pengerjaan', 'Tim melakukan instalasi atau pengembangan.'],
-  ['05', 'Testing & Serah Terima', 'Solusi diuji sebelum diserahkan kepada pelanggan.'],
-]
+const featuredServices = services.filter(service => service.slug !== 'it-maintenance')
 
 const serviceMapContent: Record<string, { title: string; description: string }> = {
   cctv: { title: 'CCTV & Security', description: 'CCTV, DVR/NVR & Monitoring' },
@@ -38,7 +32,7 @@ const serviceMapContent: Record<string, { title: string; description: string }> 
   network: { title: 'Network & Wi-Fi', description: 'LAN, Wi-Fi & Router' },
   website: { title: 'Web Development', description: 'Website & Digital Platform' },
   application: { title: 'Application', description: 'Custom Application' },
-  'it-support': { title: 'IT Support', description: 'Maintenance & Troubleshooting' },
+  'it-support': { title: 'IT Support & Repair', description: 'Support & Troubleshooting' },
 }
 </script>
 
@@ -71,7 +65,7 @@ const serviceMapContent: Record<string, { title: string; description: string }> 
               </div>
               <div class="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-3">
                 <ServicesServiceMapCard
-                  v-for="(service, index) in services"
+                  v-for="(service, index) in featuredServices"
                   :key="service.slug"
                   :service="service"
                   :index="index"
@@ -143,24 +137,19 @@ const serviceMapContent: Record<string, { title: string; description: string }> 
 
     <section class="section-pad bg-white">
       <UiContainer>
-        <UiSectionHeader eyebrow="Proses" title="Bagaimana FIXIT Bekerja?" description="Lima langkah yang membantu setiap pekerjaan tetap jelas dari awal hingga selesai." />
-        <ol class="mt-12 grid gap-0 border-t border-line lg:grid-cols-5">
-          <li v-for="(step, index) in process" :key="step[0]" class="relative border-b border-line py-7 lg:border-b-0 lg:border-r lg:px-6 lg:last:border-r-0">
-            <span class="font-mono text-sm font-bold text-brand">{{ step[0] }}</span>
-            <h3 class="mt-6 text-lg font-bold text-ink">{{ step[1] }}</h3>
-            <p class="mt-3 text-sm leading-6 text-slate-600">{{ step[2] }}</p>
-            <ArrowRight v-if="index < process.length - 1" class="absolute -right-3 top-8 hidden h-6 w-6 rounded-full bg-white p-1 text-brand lg:block" />
-          </li>
-        </ol>
+        <UiSectionHeader eyebrow="Proses" title="Bagaimana FIXIT Bekerja?" description="Alur yang menjaga kebutuhan, implementasi, pengujian, dan tindak lanjut tetap jelas." />
+        <SharedWorkProcess />
       </UiContainer>
     </section>
+
+    <SharedServiceAssurance />
 
     <section class="section-pad overflow-hidden bg-mist">
       <UiContainer>
         <div class="grid items-center gap-10 lg:grid-cols-[.8fr_1.2fr]">
           <div>
             <p class="eyebrow">Area layanan</p>
-            <h2 class="display-title">Berbasis di Merauke, hadir untuk Papua Selatan.</h2>
+            <h2 class="display-title">Berbasis di Merauke, melayani seluruh Indonesia.</h2>
             <p class="body-copy mt-5">Ceritakan lokasi dan kebutuhan Anda agar ruang lingkup layanan dapat dikonfirmasi lebih awal.</p>
             <UiButton class="mt-7" @click="openConsultation()"><UiWhatsAppIcon class="h-4 w-4" /> Konsultasikan Lokasi</UiButton>
           </div>
@@ -168,8 +157,8 @@ const serviceMapContent: Record<string, { title: string; description: string }> 
             <div class="absolute right-10 top-10 h-40 w-40 rounded-full border border-cyan/30" />
             <div class="absolute right-20 top-20 h-20 w-20 rounded-full border border-cyan/50" />
             <MapPin class="relative h-12 w-12 text-cyan" :stroke-width="1.5" />
-            <p class="relative mt-16 text-xs font-bold uppercase tracking-[.18em] text-blue-200">Initial service area</p>
-            <p class="relative mt-3 text-3xl font-bold">Merauke<br />Papua Selatan</p>
+            <p class="relative mt-16 text-xs font-bold uppercase tracking-[.18em] text-blue-200">Service base & coverage</p>
+            <p class="relative mt-3 text-3xl font-bold">Merauke<br />Seluruh Indonesia</p>
           </div>
         </div>
       </UiContainer>

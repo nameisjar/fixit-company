@@ -2,7 +2,7 @@ export const siteConfig = {
   name: 'FIXIT',
   legalName: 'PT FIXIT Solution Technology',
   tagline: 'Your Technology, Our Solution.',
-  description: 'Solusi teknologi untuk rumah, bisnis, organisasi, dan instansi di Merauke dan Papua Selatan.',
+  description: 'Solusi teknologi terintegrasi untuk rumah, bisnis, organisasi, dan instansi. Berbasis di Merauke dan melayani kebutuhan di seluruh Indonesia.',
   url: '',
   whatsapp: '',
   email: '',
@@ -10,5 +10,5 @@ export const siteConfig = {
   facebook: '',
   tiktok: '',
   address: '',
-  serviceArea: 'Merauke dan Papua Selatan',
+  serviceArea: 'Berbasis di Merauke, melayani seluruh Indonesia',
 }
